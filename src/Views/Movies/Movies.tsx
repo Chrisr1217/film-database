@@ -1,3 +1,9 @@
+import MovieList from "../../Components/MovieList/MovieList";
+
 export const Movies = () => {
-  return <div>Movies</div>;
+  return (
+    <div>
+      <MovieList />
+    </div>
+  );
 };
