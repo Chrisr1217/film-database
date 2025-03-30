@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovies } from "../../api/index";
 import styles from "./MovieList.module.css";
+import { LoadingSpinner } from "./../../Components";
 
 const MovieList = () => {
   const dispatch = useDispatch();
@@ -11,14 +12,16 @@ const MovieList = () => {
     dispatch(fetchMovies());
   }, [dispatch]);
 
-  console.log(movies);
-
-  if (loading) return <div>Loading...</div>;
+  if (!loading)
+    return (
+      <div>
+        <LoadingSpinner />
+      </div>
+    );
   if (error) return <div>Error: {error}</div>;
 
   return (
     <div>
-      <h2>Movie List</h2>
       <ul className={styles.container}>
         {movies.map((movie) => (
           <div className={styles.rowContainer}>

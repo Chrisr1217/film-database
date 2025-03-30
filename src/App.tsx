@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { Home, Movies } from "./Views";
-import { NavBar } from "./Components/NavBar";
+import { NavBar } from "./Components";
 
 function App() {
   return (
